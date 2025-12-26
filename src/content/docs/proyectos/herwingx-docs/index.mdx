@@ -6,34 +6,82 @@ sidebar:
   order: 1
 ---
 
-Documentación personal de desarrollo y portafolio técnico. Este proyecto sirve como base de conocimiento centralizada y demostración de capacidades DevOps.
+import { Badge, Card, CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-## 📊 Ficha del Proyecto
+![Banner](https://img.shields.io/badge/ESTADO-EN_PRODUCCIÓN-2ea44f?style=for-the-badge&logo=github)
+![Version](https://img.shields.io/badge/VERSIÓN-v1.0.0-blue?style=for-the-badge)
+![Tech](https://img.shields.io/badge/STACK-ASTRO_STARLIGHT-orange?style=for-the-badge&logo=astro)
 
-| Característica | Detalle |
-|:---|:---|
-| **Estado** | 🟢 En Producción |
-| **Versión** | v1.0.0 |
-| **URL Pública** | [docs.herwingx.dev](https://docs.herwingx.dev) |
-| **Repositorio** | [github.com/herwingx/docs-starlight](https://github.com/herwingx/docs-starlight) |
-| **Deploy** | Automático (GitHub Actions → Pages) |
+Base de conocimiento centralizada y demostración técnica de capacidades DevOps y Fullstack.
 
-## 🎯 Objetivos
-- Centralizar conocimiento disperso (frontend, backend, devops).
-- Practicar flujo CI/CD moderno con seguridad (OAuth).
-- Experimentar con Astro y Starlight.
+---
 
-## 🛠️ Acciones Rápidas
-- [Editar contenido (CMS)](/admin/) (Requiere login GitHub)
-- [Ver Arquitectura Técnica](./arquitectura/) (Detalles del Worker OAuth)
-- [Guía de Contribución](./mantenimiento/) (Cómo escribir guías)
+## 🚀 Acceso Rápido
 
-## ✅ Roadmap / Pendientes
+<CardGrid stagger>
+  <Card title="Panel Admin (CMS)" icon="setting">
+    Gestión visual de contenido sin tocar código.
+    <br/>
+    [**Ir al CMS →**](/admin/)
+  </Card>
+  <Card title="Código Fuente" icon="github">
+    Repositorio público en GitHub.
+    <br/>
+    [**Ver Repo →**](https://github.com/herwingx/docs-starlight)
+  </Card>
+  <Card title="Sitio Público" icon="laptop">
+    Versión desplegada en producción.
+    <br/>
+    [**Visitar →**](https://docs.herwingx.dev)
+  </Card>
+</CardGrid>
 
-- [x] Configuración inicial Astro Starlight
-- [x] Tema personalizado (Azul corporativo)
-- [x] Integración Sveltia CMS + OAuth Worker
-- [x] Deploy automático a GitHub Pages
-- [x] PWA (Instalable)
-- [ ] Migrar notas antiguas de Obsidian/Notion
-- [ ] Añadir sección de "Laboratorio" para demos interactivos
+---
+
+## 🛠️ Stack Tecnológico
+
+| Componente | Tecnología | Badge |
+|:---|:---|:---|
+| **Core** | Astro v5 | ![Astro](https://img.shields.io/badge/Astro-BC52EE?style=flat&logo=astro&logoColor=white) |
+| **Auth** | OAuth 2.0 | ![OAuth](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat&logo=cloudflare&logoColor=white) |
+| **Hosting** | GitHub Pages | ![Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github&logoColor=white) |
+
+---
+
+## 🗺️ Mapa del Proyecto
+
+Explora la documentación interna sobre cómo funciona este sistema:
+
+<div class="not-content">
+  <CardGrid>
+    <LinkCard
+      title="Arquitectura Técnica"
+      description="Diagramas de flujo, autenticación OAuth y despliegue."
+      href="./arquitectura/"
+      icon="puzzle"
+    />
+    <LinkCard
+      title="Guía de Mantenimiento"
+      description="Cómo crear contenido nuevo y organizar carpetas."
+      href="./mantenimiento/"
+      icon="document"
+    />
+  </CardGrid>
+</div>
+
+---
+
+## ✅ Roadmap
+
+<Steps>
+
+1.  **Fase 1: Infraestructura** ✅
+    Configuración de Astro, GitHub Actions y Cloudflare Tunnels (migrado a Pages).
+
+2.  **Fase 2: Contenido Dinámico** ✅
+    Integración de Sveltia CMS y autenticación segura con Workers.
+
+3.  **Fase 3: Migración de Conocimiento** 🔄
+    Volcar notas antiguas de Obsidian y Notion a este formato.
+
+</Steps>
