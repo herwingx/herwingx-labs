@@ -149,3 +149,37 @@ Para añadir un nuevo proyecto (ej: Finanzas) y que aparezca en el menú princip
 
 ### Para reestructurar (Mover carpetas)
 👉 **Usa VS Code**: Mover archivos y carpetas es mejor hacerlo localmente para asegurar que los enlaces no se rompan.
+
+---
+
+## 📜 Protocolo Global de Desarrollo
+
+Reglas obligatorias para mantener la calidad y consistencia del código.
+
+### 🌿 Ramas y Git
+- **Protección**: Nunca hacer commit directo a `main`.
+- **Nomenclatura**:
+  - `feat/nombre-feature` (Nueva funcionalidad)
+  - `fix/nombre-bug` (Corrección de error)
+  - `docs/nombre-doc` (Documentación)
+  - `refactor/nombre` (Mejoras de código)
+
+### 💬 Conventional Commits
+Formato obligatorio: `type(scope): descripción en español`
+
+| Tipo | Uso | Ejemplo |
+| :--- | :--- | :--- |
+| `feat` | Nueva característica | `feat(auth): login con google` |
+| `fix` | Corrección de bug | `fix(nav): error en móvil` |
+| `docs` | Solo documentación | `docs(readme): actualizar badges` |
+| `chore` | Configuración/Deps | `chore(deps): update astro` |
+
+### 🌐 Idioma
+- **Código/Variables**: Inglés (`getUser`, `isActive`).
+- **Commits/PRs**: Español.
+- **Documentación**: Español.
+
+### 🧹 Código Limpio
+- Eliminar `console.log` antes de commit.
+- Usar nombres descriptivos.
+- Documentar funciones complejas con JSDoc.

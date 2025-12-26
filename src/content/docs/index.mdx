@@ -1,63 +1,65 @@
 ---
 title: Bienvenido a Herwingx Docs
 description: Documentación personal de desarrollo - Frontend, Backend y DevOps
+template: splash
+hero:
+  tagline: Base de conocimientos personal sobre desarrollo de software, arquitectura y DevOps.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Explorar Documentación
+      link: /proyectos/herwingx-docs/
+      icon: right-arrow
+      variant: primary
+    - text: Ver en GitHub
+      link: https://github.com/herwingx/docs-starlight
+      icon: external
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-# 👋 Bienvenido
+> **"Code is like humor. When you have to explain it, it’s bad."** — Cory House.
 
-Esta es mi **base de conocimientos personal** donde documento todo lo que aprendo sobre desarrollo de software.
+<div class="hero-bg"></div>
 
-<CardGrid>
-  <LinkCard
-    title="🎨 Frontend"
-    description="React, CSS, TypeScript y más"
-    href="/frontend/"
-  />
-  <LinkCard
-    title="⚙️ Backend"
-    description="Node.js, APIs, bases de datos"
-    href="/backend/"
-  />
-  <LinkCard
-    title="🚀 DevOps"
-    description="CI/CD, Docker, Cloudflare"
-    href="/devops/"
-  />
-  <LinkCard
-    title="📝 Panel Admin"
-    description="Editar contenido visualmente"
-    href="/admin/"
-  />
+## 🚀 Áreas de Conocimiento
+
+<CardGrid stagger>
+  <Card title="Frontend" icon="pencil">
+    React, CSS, TypeScript y diseño de interfaces modernas.
+    <br/>
+    [**Explorar →**](/frontend/)
+  </Card>
+  <Card title="Backend" icon="setting">
+    Node.js, APIs, bases de datos y arquitectura de servidor.
+    <br/>
+    [**Explorar →**](/backend/)
+  </Card>
+  <Card title="DevOps" icon="rocket">
+    CI/CD, Docker, Cloudflare y automatización de procesos.
+    <br/>
+    [**Explorar →**](/devops/)
+  </Card>
+  <Card title="Panel Admin" icon="document">
+    Gestión de contenido visual mediante CMS.
+    <br/>
+    [**Ir al CMS →**](/admin/)
+  </Card>
 </CardGrid>
 
 ---
 
-## 🚀 Áreas de Conocimiento
-
-### 🎨 Frontend
-Desarrollo de interfaces de usuario modernas con frameworks como React, Vue, y herramientas CSS avanzadas.
-
-### ⚙️ Backend
-APIs, bases de datos, arquitecturas de servidor y patrones de diseño para aplicaciones robustas.
-
-### 🚀 DevOps
-CI/CD, contenedores, infraestructura como código y automatización de despliegues.
-
----
-
-## 📖 Guías Recientes
+## 📖 Guías Destacadas
 
 <CardGrid>
   <LinkCard
     title="GitHub Actions"
-    description="Automatiza tus despliegues con workflows profesionales"
+    description="Automatiza tus despliegues con workflows profesionales."
     href="/devops/github-actions/"
   />
   <LinkCard
     title="Cloudflare Tunnels"
-    description="Exponer servicios locales de forma segura"
+    description="Exponer servicios locales de forma segura y rápida."
     href="/devops/cloudflare-tunnels/"
   />
 </CardGrid>
@@ -66,17 +68,15 @@ CI/CD, contenedores, infraestructura como código y automatización de despliegu
 
 ## 🛠️ Sobre esta documentación
 
-Esta es mi base de conocimientos personal donde documento:
+Esta base de conocimientos sigue el **Estándar de Documentación Premium** y contiene:
 
-- **Aprendizajes** y descubrimientos técnicos
-- **Guías paso a paso** para configuraciones comunes
-- **Referencias rápidas** para consulta diaria
-- **Mejores prácticas** y patrones que uso en mis proyectos
+| Sección | Descripción |
+| :--- | :--- |
+| **Aprendizajes** | Descubrimientos técnicos y notas de estudio. |
+| **Guías** | Tutoriales paso a paso para configuraciones. |
+| **Referencias** | Snippets y comandos de uso frecuente. |
+| **Patrones** | Mejores prácticas y convenciones de código. |
 
-:::tip[Búsqueda rápida]
-Usa `Ctrl+K` o `Cmd+K` para buscar en toda la documentación.
-:::
-
-:::note[Panel de Administración]
-Accede a [/admin/](/admin/) para editar contenido visualmente sin código.
+:::tip[Búsqueda Rápida]
+Usa `Ctrl+K` o `Cmd+K` para buscar en toda la documentación al instante.
 :::
