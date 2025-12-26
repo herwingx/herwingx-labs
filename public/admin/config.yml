@@ -96,14 +96,12 @@ collections:
       - { label: Contenido, name: body, widget: markdown }
 
   - name: proyectos
-    label: '💼 Proyectos'
+    label: '💼 Proyectos (v2)'
     folder: src/content/docs/proyectos
     create: true
     delete: true
     nested:
       depth: 5
-    media_folder: ''   # Guardar imágenes junto al contenido
-    public_folder: ''
     extension: mdx
     format: frontmatter
     fields:
