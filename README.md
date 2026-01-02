@@ -1,6 +1,6 @@
 # 📚 Docs Starlight
 
-> **Your Second Brain.** — A premium, PWA-ready documentation hub powered by Astro Starlight and Sveltia CMS.
+> **Tu Segundo Cerebro.** — Un centro de documentación premium, listo para PWA, impulsado por Astro Starlight y Sveltia CMS.
 
 <!-- BADGES -->
 [![Astro](https://img.shields.io/badge/Astro-5.0-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
@@ -9,158 +9,158 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 <p align="center">
-  <img src="public/favicon.svg" alt="Docs Logo" width="120" />
+  <img src="public/favicon.svg" alt="Logo Docs" width="120" />
   <br>
-  <em>(Replace with your dashboard screenshot)</em>
+  <em>(Reemplaza esto con una captura de tu dashboard)</em>
 </p>
 
 ---
 
-## ✨ Features
+## ✨ Características
 
-| Feature              | Description                                                                  |
-| :------------------- | :--------------------------------------------------------------------------- |
-| 📚 **Starlight Core** | Built on top of the powerful Astro 5 framework for blazing fast performance. |
-| ✏️ **Visual CMS**     | Integrated **Sveltia CMS** for managing content without touching code.       |
-| 📱 **PWA Ready**      | Fully installable as a native app on Mobile and Desktop.                     |
-| 🎨 **Premium UI**     | Custom styled components, dark mode, and sleek aesthetics.                   |
-| 🔍 **SEO Optimized**  | Automatic sitemaps, meta tags, and open graph generation.                    |
+| Característica       | Descripción                                                                 |
+| :------------------- | :-------------------------------------------------------------------------- |
+| 📚 **Core Starlight** | Construido sobre el potente framework Astro 5 para una velocidad increíble. |
+| ✏️ **CMS Visual**     | **Sveltia CMS** integrado para gestionar contenido sin tocar código.        |
+| 📱 **Lista para PWA** | Totalmente instalable como app nativa en Móvil y Escritorio.                |
+| 🎨 **UI Premium**     | Componentes estilizados, modo oscuro y estética moderna.                    |
+| 🔍 **SEO Optimizado** | Sitemaps automáticos, meta tags y generación de open graph.                 |
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Inicio Rápido
 
-### Prerequisites
+### Requisitos
 - Node.js 18+
-- Git installed
-- GitHub Account (for CMS backend)
+- Git instalado
+- Cuenta de GitHub (para el backend del CMS)
 
-### 1. Create your project
-You can use **GitHub CLI** to clone this template directly:
+### 1. Crea tu proyecto
+Puedes usar **GitHub CLI** para clonar esta plantilla directamente:
 
 ```bash
-# Clone the repository
-gh repo clone herwingx/docs-starlight my-docs
+# Clonar el repositorio
+gh repo clone herwingx/docs-starlight mis-docs
 
-# Enter the directory
-cd my-docs
+# Entrar al directorio
+cd mis-docs
 ```
 
-### 2. Install dependencies
+### 2. Instalar dependencias
 ```bash
 npm install
 ```
 
-### 3. Start Development Server
+### 3. Iniciar Servidor de Desarrollo
 ```bash
 npm run dev
 ```
 
-**Local URLs:**
+**URLs Locales:**
 - 📖 **Docs:** `http://localhost:4321`
 - 🎛️ **Admin:** `http://localhost:4321/admin/`
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Arquitectura
 
 ```mermaid
 graph TD
-    A[Writer / Editor] -->|Via GUI| B[Sveltia CMS]
-    A -->|Via Code| C[VS Code / Git]
+    A[Escritor / Editor] -->|Vía GUI| B[Sveltia CMS]
+    A -->|Vía Código| C[VS Code / Git]
     
-    subgraph Source Control
-    B -->|Commit changes| D[GitHub Repository]
-    C -->|Commit changes| D
+    subgraph Control de Versiones
+    B -->|Commit cambios| D[Repositorio GitHub]
+    C -->|Commit cambios| D
     end
     
-    subgraph Build & Deploy
-    D -->|Trigger| E[CI/CD Pipeline]
-    E -->|Build Static Files| F[Astro Starlight]
-    F -->|Deploy| G[Hosting Provider]
+    subgraph Build y Deploy
+    D -->|Disparador| E[Pipeline CI/CD]
+    E -->|Build Archivos Estáticos| F[Astro Starlight]
+    F -->|Deploy| G[Proveedor de Hosting]
     end
     
-    G -->|Serve| H[PWA / Web App]
+    G -->|Servir| H[PWA / Web App]
 ```
 
 ---
 
-## 📦 Deployment Options
+## 📦 Opciones de Despliegue
 
-This template is cloud-agnostic. You can deploy it anywhere static sites are supported.
+Esta plantilla es agnóstica a la nube. Puedes desplegarla donde sea que se soporten sitios estáticos.
 
-| Platform             | Setup                               | Command         |
+| Plataforma           | Configuración                       | Comando         |
 | :------------------- | :---------------------------------- | :-------------- |
-| **Cloudflare Pages** | Connect Repo → Preset: `Astro`      | `npm run build` |
+| **Cloudflare Pages** | Conectar Repo → Preset: `Astro`     | `npm run build` |
 | **GitHub Pages**     | Settings → Source: `GitHub Actions` | `npm run build` |
 | **Vercel**           | Import Project → Preset: `Astro`    | `npm run build` |
 | **Netlify**          | Import Project → Preset: `Astro`    | `npm run build` |
 
-### Using GitHub CLI for Deploy (Example)
-If you want to set up GitHub Pages quickly:
+### Usando GitHub CLI para Deploy (Ejemplo)
+Si quieres configurar GitHub Pages rápidamente:
 
 ```bash
-# Enable GitHub Pages via Actions
+# Habilitar GitHub Pages vía Actions
 gh repo edit --enable-pages --source-branch main --source-path /
 ```
 
 ---
 
-## 📝 Content Management
+## 📝 Gestión de Contenido
 
-### Using the Visual CMS
-1. Navigate to `/admin/`.
-2. Login with your GitHub account.
-3. Create or edit collections visually.
-4. Updates are automatically committed to your repo.
+### Usando el CMS Visual
+1. Navega a `/admin/`.
+2. Inicia sesión con tu cuenta de GitHub.
+3. Crea o edita colecciones visualmente.
+4. Las actualizaciones se commitean automáticamente a tu repo.
 
-### Manual Editing (MDX)
-Create new `.mdx` files in `src/content/docs/`:
+### Edición Manual (MDX)
+Crea nuevos archivos `.mdx` en `src/content/docs/`:
 
 ```mdx
 ---
-title: My New Page
-description: A description for SEO
+title: Mi Nueva Página
+description: Una descripción para SEO
 ---
 
-# Hello World
-This is a new documentation page.
+# Hola Mundo
+Esta es una nueva página de documentación.
 ```
 
 ---
 
-##  Useful Commands
+## 🔧 Comandos Útiles
 
-| Command           | Action                               |
-| :---------------- | :----------------------------------- |
-| `npm run dev`     | Start local dev server               |
-| `npm run build`   | Build for production                 |
-| `npm run preview` | Preview the production build locally |
-| `npm run dev:cms` | Run dev server with local CMS proxy  |
+| Comando           | Acción                                          |
+| :---------------- | :---------------------------------------------- |
+| `npm run dev`     | Iniciar servidor de desarrollo local            |
+| `npm run build`   | Compilar para producción                        |
+| `npm run preview` | Previsualizar la build de producción localmente |
+| `npm run dev:cms` | Correr servidor dev con proxy local para CMS    |
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológico
 
 **Frontend**
 - **Framework**: Astro 5
-- **Theme**: Starlight theme
-- **Styles**: CSS Variables + Custom Glassmorphism
+- **Tema**: Starlight theme
+- **Estilos**: Variables CSS + Glassmorphism Personalizado
 
-**Tools**
-- **CMS**: Sveltia CMS (Git-based)
-- **Icons**: Phosphor / Astro Icon
-- **PWA**: Vite PWA Plugin
+**Herramientas**
+- **CMS**: Sveltia CMS (Basado en Git)
+- **Iconos**: Phosphor / Astro Icon
+- **PWA**: Plugin Vite PWA
 
 ---
 
-## 🤝 Contributing & License
+## 🤝 Contribuir y Licencia
 
-Feel free to fork this project and use it as a base for your own documentation.
+Siéntete libre de hacer un fork de este proyecto y usarlo como base para tu propia documentación.
 
-1. Fork the repo: `gh repo fork herwingx/docs-starlight`
-2. Create feature branch: `git checkout -b feature/amazing-docs`
-3. Commit changes: `git commit -m 'feat: add amazing docs'`
-4. Push: `git push origin feature/amazing-docs`
+1. Fork del repo: `gh repo fork herwingx/docs-starlight`
+2. Crear rama: `git checkout -b feature/docs-increibles`
+3. Commit cambios: `git commit -m 'feat: agregar docs increibles'`
+4. Push: `git push origin feature/docs-increibles`
 
-Licensed under **MIT**.
+Licenciado bajo **MIT**.
