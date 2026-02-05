@@ -14,6 +14,9 @@ collections:
   - name: frontend
     label: "🎨 Frontend"
     folder: src/content/docs/frontend
+    nested:
+      depth: 100
+      summary: "{{dirname}} / {{title}}"
     create: true
     delete: true
     slug: "{{slug}}"
@@ -62,6 +65,9 @@ collections:
   - name: backend
     label: "⚙️ Backend"
     folder: src/content/docs/backend
+    nested:
+      depth: 100
+      summary: "{{dirname}} / {{title}}"
     create: true
     delete: true
     slug: "{{slug}}"
@@ -110,6 +116,9 @@ collections:
   - name: devops
     label: "🚀 DevOps"
     folder: src/content/docs/devops
+    nested:
+      depth: 100
+      summary: "{{dirname}} / {{title}}"
     create: true
     delete: true
     slug: "{{slug}}"
@@ -155,9 +164,12 @@ collections:
                 }
       - { label: Contenido, name: body, widget: markdown }
 
-  - name: project-docs
-    label: "📘 Herwingx Labs"
-    folder: src/content/docs/proyectos/herwingx-docs
+  - name: proyectos
+    label: "📘 Proyectos"
+    folder: src/content/docs/proyectos
+    nested:
+      depth: 100
+      summary: "{{dirname}} / {{title}}"
     create: true
     delete: true
     slug: "{{slug}}"
