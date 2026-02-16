@@ -308,7 +308,8 @@ strong, b {
    ========================================= */
 
 /* Base reset for Starlight actions */
-.action {
+.action,
+.sl-link-button {
 	border-radius: 12px !important;
 	padding: 0.9rem 1.8rem !important;
 	font-weight: 600 !important;
@@ -321,7 +322,8 @@ strong, b {
 }
 
 /* Primary Button - "Cyberpunk Entrance" */
-.action.primary {
+.action.primary,
+.sl-link-button.primary {
 	background: rgba(59, 130, 246, 0.15) !important; /* Semi-transparent blue */
 	color: #ffffff !important; /* White for WCAG 2.1 AA compliance */
 	border: 1px solid rgba(96, 165, 250, 0.4) !important; /* Glowing border */
@@ -335,7 +337,8 @@ strong, b {
 }
 
 /* Pulse Animation for Primary Entrance */
-.action.primary::after {
+.action.primary::after,
+.sl-link-button.primary::after {
 	content: "";
 	position: absolute;
 	top: -50%; left: -50%; width: 200%; height: 200%;
@@ -349,7 +352,8 @@ strong, b {
 	50% { opacity: 0.6; transform: scale(1.1); }
 }
 
-.action.primary:hover {
+.action.primary:hover,
+.sl-link-button.primary:hover {
 	background: rgba(59, 130, 246, 0.25) !important;
 	border-color: #60a5fa !important;
 	color: white !important;
@@ -360,14 +364,18 @@ strong, b {
 }
 
 /* Secondary/Minimal Button - "Ghost Glass" */
-.action.minimal {
+.action.minimal,
+.sl-link-button.minimal,
+.sl-link-button.secondary {
 	background: rgba(255, 255, 255, 0.03) !important;
 	color: var(--sl-color-gray-2) !important;
 	border: 1px solid var(--sl-color-hairline) !important;
 	backdrop-filter: blur(8px) !important;
 }
 
-.action.minimal:hover {
+.action.minimal:hover,
+.sl-link-button.minimal:hover,
+.sl-link-button.secondary:hover {
 	background: rgba(255, 255, 255, 0.08) !important;
 	color: var(--sl-color-white) !important;
 	border-color: var(--sl-color-gray-3) !important;
@@ -375,13 +383,17 @@ strong, b {
 }
 
 /* Icon integration inside buttons */
-.action astro-icon {
+.action astro-icon,
+.sl-link-button astro-icon,
+.sl-link-button svg {
 	width: 1.2em;
 	height: 1.2em;
 	transition: transform 0.3s ease;
 }
 
-.action.primary:hover astro-icon {
+.action.primary:hover astro-icon,
+.sl-link-button.primary:hover astro-icon,
+.sl-link-button.primary:hover svg {
 	transform: translateX(3px) rotate(-5deg);
 }
 
