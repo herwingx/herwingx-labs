@@ -215,11 +215,11 @@ collections:
       - { label: Contenido, name: body, widget: markdown }
 
   # ═══════════════════════════════════════════════════════════════
-  # 📘 PROYECTOS
+  # 🛠️ TOOLS & LABS
   # ═══════════════════════════════════════════════════════════════
-  - name: proyectos
-    label: "📘 Proyectos"
-    folder: src/content/docs/proyectos
+  - name: tools-labs
+    label: "🛠️ Tools & Labs"
+    folder: src/content/docs/tools-labs
     create: true
     delete: true
     slug: "{{slug}}"
@@ -248,11 +248,25 @@ collections:
         required: false
         fields:
           - { label: Orden, name: order, widget: number, required: false }
+          - label: Badge
+            name: badge
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { label: Texto, name: text, widget: string, required: false }
+              - {
+                  label: Variante,
+                  name: variant,
+                  widget: select,
+                  options: [tip, note, caution, danger, success],
+                  required: false,
+                }
       - { label: Contenido, name: body, widget: markdown }
 
-  - name: proyectos-herwingx-docs
-    label: "📘 Proyectos › 📚 Herwingx Docs"
-    folder: src/content/docs/proyectos/herwingx-docs
+  - name: tools-labs-wsl
+    label: "🛠️ Tools & Labs › 🐧 WSL"
+    folder: src/content/docs/tools-labs/wsl
     create: true
     delete: true
     slug: "{{slug}}"
@@ -280,12 +294,6 @@ collections:
         collapsed: true
         required: false
         fields:
-          - {
-              label: Etiqueta Menu,
-              name: label,
-              widget: string,
-              required: false,
-            }
           - { label: Orden, name: order, widget: number, required: false }
       - { label: Contenido, name: body, widget: markdown }
 

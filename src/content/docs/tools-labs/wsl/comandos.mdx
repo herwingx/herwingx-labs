@@ -1,0 +1,114 @@
+---
+title: Cheat Sheet de Comandos WSL
+description: Referencia rápida de los comandos más útiles para gestionar tu subsistema Linux en Windows.
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## ⚡ Comandos Esenciales (PowerShell)
+
+Estos comandos se ejecutan desde **PowerShell** o **CMD** en Windows, no dentro de Linux.
+
+### Gestión de Instancias
+
+| Acción | Comando | Ejemplo |
+| :--- | :--- | :--- |
+| **Listar Distros** | `wsl --list --verbose` | `wsl -l -v` |
+| **Instalar Distro** | `wsl --install -d <Nombre>` | `wsl --install -d Debian` |
+| **Listar Disponibles** | `wsl --list --online` | `wsl -l -o` |
+| **Actualizar WSL** | `wsl --update` | `wsl --update` |
+| **Apagar Todo** | `wsl --shutdown` | `wsl --shutdown` |
+| **Matar una Distro** | `wsl --terminate <Nombre>` | `wsl -t Ubuntu` |
+
+### Configuración
+
+| Acción | Comando | Descripción |
+| :--- | :--- | :--- |
+| **Versión por Defecto** | `wsl --set-default-version 2` | Asegura que nuevas instalaciones sean rápidas. |
+| **Convertir Versión** | `wsl --set-version <Distro> 2` | Migra una distro vieja (v1) a v2. |
+| **Distro por Defecto** | `wsl --set-default <Nombre>` | Elige cuál se abre al escribir `wsl`. |
+
+---
+
+## 📦 Backup y Migración (Export/Import)
+
+¿Quieres mover tu Linux a otro disco o compartir tu configuración con un amigo?
+
+<Steps>
+
+1.  **Exportar (Backup)**
+    
+    Crea un archivo `.tar` con todo tu sistema.
+    
+    ```powershell
+    # Sintaxis: wsl --export <Distro> <ArchivoSalida>
+    wsl --export Ubuntu D:\Backups\ubuntu-backup.tar
+    ```
+
+2.  **Importar (Restaurar)**
+    
+    Crea una nueva instancia desde ese backup.
+    
+    ```powershell
+    # Sintaxis: wsl --import <NombreNuevo> <RutaInstalacion> <ArchivoBackup>
+    wsl --import UbuntuCopia D:\WSL\UbuntuCopia D:\Backups\ubuntu-backup.tar
+    ```
+
+</Steps>
+
+---
+
+## 🐧 Comandos Útiles DENTRO de Linux
+
+Una vez estás dentro de tu terminal (Ubuntu/Debian), estos son trucos específicos de la integración con Windows.
+
+### Abrir Explorador de Windows
+
+¿Quieres ver tus archivos de Linux en la interfaz gráfica de Windows?
+
+```bash
+explorer.exe .
+```
+
+### Copiar al Portapapeles de Windows
+
+Puedes enviar la salida de un comando de Linux directo al `Ctrl+C` de Windows.
+
+```bash
+# Copia el contenido de un archivo
+cat clave_secreta.txt | clip.exe
+
+# Copia la ruta actual
+pwd | clip.exe
+```
+
+### Ejecutar programas de Windows
+
+Sí, puedes lanzar ejecutables de Windows desde Linux.
+
+```bash
+notepad.exe archivo.txt
+code .
+chrome.exe http://localhost:3000
+```
+
+---
+
+## 🛠️ Solución de Problemas Comunes
+
+### "WslRegisterDistribution failed with error: 0x8007019e"
+**Causa:** La característica de Windows no está habilitada.
+**Solución:** Asegúrate de ejecutar `wsl --install` como Administrador y reiniciar.
+
+### Olvidé mi contraseña de root/usuario
+1. Abre PowerShell.
+2. Logueate como root en la distro problemática:
+   ```powershell
+   wsl -d Ubuntu -u root
+   ```
+3. Cambia la contraseña de tu usuario:
+   ```bash
+   passwd nombre_usuario
+   ```

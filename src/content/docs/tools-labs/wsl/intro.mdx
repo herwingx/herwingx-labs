@@ -1,0 +1,129 @@
+---
+title: Introducción a WSL2
+description: Guía definitiva para transformar tu Windows en una máquina de desarrollo Linux real.
+sidebar:
+  order: 1
+---
+
+import { Steps, Card, CardGrid } from '@astrojs/starlight/components';
+
+## 🐧 ¿Por qué WSL2?
+
+Seamos honestos: Desarrollar en Windows solía ser un dolor de cabeza. Rutas de archivos extrañas, comandos que no existen (`ls` vs `dir`), y herramientas de Node/Python que fallan misteriosamente.
+
+**WSL2 (Windows Subsystem for Linux 2)** cambió el juego. No es una máquina virtual lenta, y no es un emulador barato. Es un **kernel de Linux real** corriendo _junto_ a Windows.
+
+### 🔥 Beneficios Inmediatos
+
+<CardGrid>
+  <Card title="Velocidad Nativa" icon="rocket">
+    El sistema de archivos de Linux es infinitamente más rápido para operaciones de `git` y `npm install` que NTFS.
+  </Card>
+  <Card title="Herramientas Reales" icon="linux">
+    Usa `grep`, `sed`, `awk`, `docker`, `redis` y servidores reales tal como lo harías en producción.
+  </Card>
+  <Card title="VS Code Mágico" icon="laptop">
+    La extensión "Remote - WSL" te permite editar código en Linux con la UI de Windows. Cero latencia.
+  </Card>
+  <Card title="Adiós Dual Boot" icon="close">
+    Olvídate de reiniciar el PC para entrar a Ubuntu. Tienes lo mejor de ambos mundos al mismo tiempo.
+  </Card>
+</CardGrid>
+
+---
+
+## 🚀 Instalación en 3 Minutos
+
+Requisito: **Windows 10 versión 2004+** (Build 19041 o superior) o **Windows 11**.
+
+<Steps>
+
+1.  **Abre PowerShell como Administrador**
+    
+    Click derecho en el botón de inicio -> Terminal (Admin) o PowerShell (Admin).
+
+2.  **El Comando Mágico**
+    
+    Ejecuta esto y ve por un café:
+
+    ```powershell
+    wsl --install
+    ```
+    
+    :::tip[¿Qué hace esto?]
+    Este comando habilita las características de virtualización, descarga el último kernel de Linux y instala **Ubuntu** por defecto.
+    :::
+
+    ¿Prefieres otra distro? Mira las disponibles con `wsl --list --online` e instala con `wsl --install -d Debian`.
+
+3.  **Reinicia tu PC**
+    
+    Es obligatorio. Al volver, se abrirá una terminal negra automáticamente pidiéndote crear tu **Usuario UNIX** y **Contraseña**.
+    
+    > **Nota:** Cuando escribas la contraseña, no verás asteriscos. Es seguridad de Linux. Solo escribe y dale Enter.
+
+4.  **Verificación**
+
+    Asegúrate de estar usando la versión 2 (la rápida) ejecutando en PowerShell:
+    
+    ```powershell
+    wsl -l -v
+    ```
+    
+    Debería decir `VERSION 2` al lado de Ubuntu.
+
+</Steps>
+
+## 🛠️ Setup de Desarrollo Profesional
+
+Ya tienes Linux. Ahora hagámoslo poderoso.
+
+### 1. Actualiza todo
+Lo primero que haces en un Linux nuevo:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 2. Instala Windows Terminal
+No uses la consola vieja de cmd. Descarga **Windows Terminal** desde la Microsoft Store (o ya viene en Win 11). Es moderna, tiene pestañas, aceleración por GPU y soporta emojis 🚀.
+
+### 3. VS Code Integration (Vital)
+1. Instala VS Code en Windows.
+2. Instala la extensión **WSL** (id: `ms-vscode-remote.remote-wsl`).
+3. En tu terminal de Ubuntu, ve a tu carpeta de proyectos y escribe:
+
+```bash
+# Crear carpeta de proyectos (¡En el home de Linux, no en C:/!)
+mkdir ~/proyectos
+cd ~/proyectos
+code .
+```
+
+¡Boom! 💥 VS Code se abrirá en Windows, pero estará conectado a tu Linux. La terminal integrada será bash/zsh, y el linter correrá en Linux.
+
+## 🎩 ZSH y Powerlevel10k (Estética Hacker)
+
+Ubuntu viene con `bash` por defecto. Funciona, pero es feo. Queremos [Oh My Zsh](https://ohmyz.sh/).
+
+```bash
+# instalar zsh y git
+sudo apt install zsh git -y
+
+# Instalar Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Acepta cambiar tu shell por defecto a `zsh`. Ahora tu terminal se ve pro y tiene autocompletado de comandos.
+
+## ⚠️ Regla de Oro de WSL
+
+:::danger[NUNCA HAGAS ESTO]
+**No trabajes con archivos del sistema de Windows (`/mnt/c/Users/...`) desde Linux.**
+
+El sistema de archivos de Windows (NTFS) es lento cuando se accede desde Linux.
+Crea tus proyectos **DENTRO** del sistema de archivos de Linux (ej: `~/proyectos/mi-web` o `/home/tu-usuario/...`).
+
+**Correcto:** `cd ~`
+**Incorrecto:** `cd /mnt/c/Users/Juan/Documents`
+:::

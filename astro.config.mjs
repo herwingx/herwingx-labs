@@ -60,9 +60,9 @@ export default defineConfig({
 				},
 				// Proyectos Específicos (Nivel Raíz)
 				{
-					label: '🧪 Lab & Setups',
+					label: '🛠️ Tools & Labs',
 					collapsed: false,
-					autogenerate: { directory: 'proyectos' },
+					autogenerate: { directory: 'tools-labs' },
 				},
 			],
 			// Head personalizado para PWA y SEO
