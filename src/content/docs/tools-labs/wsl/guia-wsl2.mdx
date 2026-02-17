@@ -3,10 +3,10 @@ title: Introducción a WSL2
 date: 2026-02-17
 description: Guía definitiva para transformar tu Windows en una máquina de desarrollo Linux real.
 sidebar:
+  order: 1
   badge:
     text: Nuevo
     variant: success
-  order: 1
 ---
 
 import { Steps, Card, CardGrid } from '@astrojs/starlight/components';
@@ -119,6 +119,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 Acepta cambiar tu shell por defecto a `zsh`. Ahora tu terminal se ve pro y tiene autocompletado de comandos.
+
+### 💎 Alternativa de Élite: Oh My Posh
+
+Si buscas la máxima personalización con temas estilo **Powerline** (esos con flechas y segmentos de colores), [Oh My Posh](https://ohmyposh.dev/) es la herramienta definitiva. Lo mejor es que es agnóstica a la shell: funciona igual en **PowerShell**, **zsh** o **bash**.
+
+:::tip[Tema Powerline]
+Para que los iconos y glifos se vean bien, **debes** instalar una "Nerd Font" en Windows y configurarla en tu Windows Terminal. 
+
+Mi recomendación personal: [Maple Mono](https://font.subf.dev/en), una fuente increíble con ligaduras y un estilo moderno que queda perfecto en la terminal.
+:::
 
 ## ⚠️ Regla de Oro de WSL
 

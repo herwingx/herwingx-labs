@@ -1,28 +1,43 @@
 ---
-title: ¿Qué es DevOps?
-description: Introducción a la cultura DevOps y la automatización de infraestructura.
-date: 2026-02-17
+title: DevOps & Immutable Infra
+description: Donde el código se encuentra con el hardware. Automatización, seguridad y despliegues sin fricción.
 sidebar:
-  badge:
-    text: Nuevo
-    variant: success
+  label: Introducción DevOps
   order: 1
 ---
 
-## Definición
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
-**DevOps** no es solo un rol, es una cultura y conjunto de prácticas que une el desarrollo de software (Dev) con las operaciones de TI (Ops). Su objetivo es acortar el ciclo de vida del desarrollo y entregar software de alta calidad de forma continua.
+## 🚀 La Magia Detrás del Despliegue
 
-### Prácticas Esenciales
+En **Herwingx Labs**, DevOps no es solo configurar un servidor. Es el arte de crear infraestructuras invisibles, inmutables y auto-reparables. Aquí transformamos la complejidad operativa en código simple y predecible.
 
-1.  **CI/CD (Integración y Despliegue Continuo)**: Automatizar la construcción, prueba y despliegue del código.
-2.  **Infraestructura como Código (IaC)**: Gestionar servidores y redes mediante archivos de configuración en lugar de configuración manual.
-3.  **Monitoreo y Logging**: Observabilidad constante para detectar y solucionar problemas rápidamente.
+> "Si tienes que entrar por SSH a un servidor para arreglar algo, tu proceso ha fallado."
 
-### ¿Por qué es importante?
+### Pilares de Operaciones Modernas
 
--   **Velocidad**: Despliegues más frecuentes y rápidos.
--   **Confiabilidad**: Menos errores manuales y recuperación más rápida ante fallos.
--   **Colaboración**: Rompe los silos entre desarrolladores y administradores de sistemas.
+<CardGrid>
+  <Card title="CI/CD Elite" icon="rocket">
+    Pipelines que no solo despliegan, sino que validan, prueban y aseguran la calidad del código en cada commit.
+  </Card>
+  <Card title="Infraestructure as Code" icon="setting">
+    Dominio de Terraform, Docker y configuraciones declarativas. Tu infraestructura debería ser tratada exactamente igual que tu código.
+  </Card>
+  <Card title="Cloud Native" icon="starlight">
+    Aprovechamiento máximo de servicios en la nube para reducir la carga operativa y centrarse en el valor de negocio.
+  </Card>
+</CardGrid>
 
-> "Automatiza todo lo que puedas, mide todo lo que hagas."
+---
+
+## ⚡ Domina la Nube
+
+En esta sección exploraremos cómo gestionar entornos de producción reales:
+
+1.  **Contenedores & Orquestación**: Ir más allá del `docker run`. Redes, volúmenes y escalado.
+2.  **Seguridad Proactiva**: Auditorías automatizadas y gestión de secretos sin riesgo.
+3.  **Linux Mastery**: La terminal es tu mejor amiga. Comandos avanzados para diagnóstico y automatización.
+
+:::note[Pensamiento]
+Un buen sistema no es el que nunca falla, sino el que se recupera solo antes de que el usuario lo note.
+:::

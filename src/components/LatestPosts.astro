@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { Card, CardGrid } from "@astrojs/starlight/components";
 
 // 1. Obtener todos los documentos de la colección 'docs'
 const allDocs = await getCollection("docs");
@@ -8,36 +7,201 @@ const allDocs = await getCollection("docs");
 // 2. Filtrar y Ordenar
 const latestDocs = allDocs
   .filter((doc) => {
-    // Excluir la página de inicio y archivos sin fecha o "drafts"
-    return !doc.id.endsWith("index.mdx") && doc.data.date;
+    // Excluir la página de inicio e introducciones de sección de forma estricta
+    // Limpiamos el ID de extensiones para comparar
+    const cleanId = doc.id.replace(/\.(md|mdx)$/, "");
+
+    const isSpecialPage =
+      doc.data.template === "splash" ||
+      cleanId === "" ||
+      cleanId === "index" ||
+      cleanId === "intro" ||
+      cleanId === "404" ||
+      cleanId.endsWith("/index") ||
+      cleanId.endsWith("/intro") ||
+      cleanId.endsWith("/404");
+
+    return !isSpecialPage && doc.data.date;
   })
   .sort((a, b) => {
-    // Ordenar por fecha descendente (Más reciente primero)
     return new Date(b.data.date!).getTime() - new Date(a.data.date!).getTime();
   })
-  .slice(0, 3); // Tomar solo los 3 primeros
+  .slice(0, 3);
+
+// Función para formatear fecha
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString("es-ES", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
+
+// Función para obtener categoría estética basada en el ID (directorio)
+const getCategory = (id: string) => {
+  const parts = id.split("/");
+  if (parts.length > 1) {
+    const cat = parts[0].toUpperCase();
+    return cat === "TOOLS-LABS" ? "LABS" : cat;
+  }
+  return "POST";
+};
 ---
 
-<CardGrid stagger>
+<div class="latest-updates-grid">
   {
     latestDocs.length > 0 ? (
       latestDocs.map((doc) => (
-        <Card title={doc.data.title} icon="star">
-          {doc.data.description}
-          <br />
-          <a
-            href={`/${doc.id.replace(/\.mdx?$/, "")}/`}
-            class="read-more-btn"
-          >
-            <span>👉</span> Leer Tutorial
-          </a>
-        </Card>
+        <a href={`/${doc.id}/`} class="post-card">
+          <div class="post-badge">{getCategory(doc.id)}</div>
+          <div class="post-content">
+            <span class="post-date">{formatDate(doc.data.date)}</span>
+            <h3>{doc.data.title}</h3>
+            <p>
+              {doc.data.description || "Explora este recurso técnico de élite."}
+            </p>
+          </div>
+          <div class="post-footer">
+            <span class="read-btn">Entrar al post</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
       ))
     ) : (
-      <Card title="Esperando contenido..." icon="pencil">
-        Pronto verás aquí mis últimos tutoriales. ¡Asegúrate de ponerle fecha a
-        tus posts!
-      </Card>
+      <div class="empty-state">
+        <p>Pronto verás aquí mis últimos tutoriales.</p>
+      </div>
     )
   }
-</CardGrid>
+</div>
+
+<style>
+  .latest-updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .post-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  /* Efecto de resplandor sutil */
+  .post-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(
+      circle at top right,
+      var(--color-accent-glow),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .post-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--color-accent);
+    background: rgba(59, 130, 246, 0.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .post-card:hover::after {
+    opacity: 0.15;
+  }
+
+  .post-badge {
+    align-self: flex-start;
+    background: var(--color-accent);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px var(--color-accent-glow);
+  }
+
+  .post-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+    margin-bottom: 0.5rem;
+    font-family: var(--sl-font-mono);
+  }
+
+  h3 {
+    margin: 0 0 0.75rem 0 !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-text) !important;
+    font-family: var(--sl-font-system) !important;
+  }
+
+  p {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    color: var(--color-text-dim) !important;
+    line-height: 1.5 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .read-btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .arrow {
+    font-family: var(--sl-font-mono);
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .post-card:hover .arrow {
+    transform: translateX(8px);
+  }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem;
+    border: 1px dashed var(--color-border);
+    border-radius: 16px;
+    color: var(--color-text-dim);
+  }
+</style>

@@ -1,64 +1,57 @@
 ---
 title: Herwingx Labs
-description: Experimentos de código, setups de servidor y tutoriales para developers curiosos.
+description: Recursos élite, workflows optimizados y herramientas avanzadas para desarrolladores que buscan la maestría técnica.
 template: splash
 hero:
-  tagline: "Arquitectura de Software, DevOps y Frontend High-End. Documentación técnica para constructores del futuro."
+  tagline: "Optimiza tu flujo de trabajo, domina herramientas de élite y escala tu productividad. El laboratorio técnico para desarrolladores que no se conforman con lo básico."
   image:
     file: ../../assets/logo-dark.svg
   actions:
-    - text: Explorar Docs
+    - text: Entrar al Lab
       link: /intro/
       icon: rocket
       variant: primary
-    - text: GitHub
+    - text: Proyectos en GitHub
       link: https://github.com/herwingx
       icon: external
       variant: minimal
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+ 
+
 import LatestPosts from '../../components/LatestPosts.astro';
+import MasteryGrid from '../../components/MasteryGrid.astro';
+import LabIcon from '../../components/LabIcon.astro';
+import PhilosophyGrid from '../../components/PhilosophyGrid.astro';
 
 ## ⚡ Últimas Actualizaciones
 
-Lo último que he publicado en el laboratorio:
+Explora lo más reciente en el laboratorio:
 
 <LatestPosts />
 
 ---
 
-## 📂 Módulos de Conocimiento
+---
 
-Aquí guardo mis notas ordenadas para que no se me olviden (y para que tú las uses).
+## 🛰️ Áreas de Maestría
 
-<CardGrid>
-  <LinkCard
-    title="🎨 Frontend"
-    description="Efectos CSS, React y trucos de UI que uso en mis videos."
-    href="/frontend/intro/"
-    icon="pencil"
-  />
-  <LinkCard
-    title="⚙️ Backend"
-    description="APIs, Bases de Datos y la lógica que nadie ve pero todos necesitan."
-    href="/backend/intro/"
-    icon="setting"
-  />
-  <LinkCard
-    title="🚀 DevOps"
-    description="Despliegues, Linux y automatización. Donde ocurre la magia real."
-    href="/devops/intro/"
-    icon="rocket"
-  />
-  <LinkCard
-    title="🛠️ Tools & Labs"
-    description="Mis dotfiles, temas de terminal y herramientas secretas."
-    href="/tools-labs/intro/"
-    icon="flask"
-  />
-</CardGrid>
+He condensado mi experiencia en estos pilares para ayudarte a construir software de alto nivel.
 
-:::tip[Fun Fact del Día]
-Este sitio web no tiene servidor backend. Usa una función "serverless" oculta para loguearme. [Descubre el truco aquí](/tools-labs/intro/).
+<MasteryGrid />
+
+
+---
+
+## 🔬 La Filosofía del Lab
+
+Esta es la mentalidad que guía cada experimento y guía que publico.
+
+<PhilosophyGrid />
+
+
+:::tip[Consistencia Real]
+Cada técnica compartida ha sido probada en entornos de producción reales. No es teoría, es experiencia documentada.
 :::
+
+

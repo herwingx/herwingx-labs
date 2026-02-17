@@ -1,0 +1,148 @@
+---
+import { LinkCard } from "@astrojs/starlight/components";
+import LabIcon from "./LabIcon.astro";
+
+const masteries = [
+  {
+    title: "🎨 Frontend High-End",
+    description:
+      "Más allá de los componentes: efectos complejos, animaciones premium y tooling de última generación.",
+    href: "/frontend/intro/",
+    icon: "frontend",
+  },
+  {
+    title: "⚙️ Backend & AI",
+    description:
+      "Arquitecturas escalables, integraciones con IA y la lógica robusta detrás de flujos de trabajo modernos.",
+    href: "/backend/intro/",
+    icon: "backend",
+  },
+  {
+    title: "🚀 DevOps & Infra",
+    description:
+      "Domina el despliegue, la seguridad y la terminal. Infraestructura pensada para el rendimiento puro.",
+    href: "/devops/intro/",
+    icon: "devops",
+  },
+  {
+    title: "🛠️ Tools & Elite Workflows",
+    description:
+      "Mis dotfiles, configuraciones de Warp/Terminal y las herramientas que multiplicarán tu productividad.",
+    href: "/tools-labs/intro/",
+    icon: "tools",
+  },
+];
+---
+
+<div class="mastery-grid">
+  {
+    masteries.map((m) => (
+      <a href={m.href} class="mastery-card">
+        <div class="card-content">
+          <div class="card-header">
+            <div class="icon-container">
+              <LabIcon name={m.icon as any} size="32px" />
+            </div>
+            <h3>{m.title}</h3>
+          </div>
+          <p>{m.description}</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .mastery-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .mastery-card:hover {
+    border-color: var(--color-accent) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .mastery-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at top right,
+      var(--color-accent-glow),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mastery-card:hover::before {
+    opacity: 0.1;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon-container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  h3 {
+    margin: 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    font-family: var(--sl-font-system) !important;
+    color: var(--color-text) !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+    color: var(--color-text-dim) !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    font-family: var(--sl-font-mono);
+    color: var(--color-text-dim);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  .mastery-card:hover .card-arrow {
+    color: var(--color-accent);
+    transform: translateX(5px);
+  }
+</style>

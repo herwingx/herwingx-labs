@@ -1,0 +1,93 @@
+---
+import LabIcon from "./LabIcon.astro";
+
+const principles = [
+  {
+    title: "Productivity Radical",
+    description:
+      "Si es manual, es error. Automatizamos cada parte del flujo de trabajo para centrarnos en lo excepcional, no en lo mundano.",
+    icon: "productivity",
+  },
+  {
+    title: "Elite Toolset",
+    description:
+      "No elegimos herramientas por moda, sino por rendimiento puro. Probamos y refinamos el arsenal técnico definitivo.",
+    icon: "toolset",
+  },
+  {
+    title: "Technical Mastery",
+    description:
+      "Aquí no buscamos el 'cómo' superficial, sino el 'por qué' profundo. Construimos conocimiento sólido, no solo soluciones rápidas.",
+    icon: "mastery",
+  },
+];
+---
+
+<div class="philosophy-grid">
+  {
+    principles.map((p) => (
+      <div class="philosophy-card">
+        <div class="card-header">
+          <div class="icon-container">
+            <LabIcon name={p.icon as any} size="28px" />
+          </div>
+          <h3>{p.title}</h3>
+        </div>
+        <p>{p.description}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .philosophy-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .philosophy-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(1.02);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    margin: 0 !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    color: var(--color-text) !important;
+    font-family: var(--sl-font-mono) !important;
+  }
+
+  p {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    color: var(--color-text-dim) !important;
+    line-height: 1.6 !important;
+  }
+</style>
