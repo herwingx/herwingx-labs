@@ -1,0 +1,74 @@
+---
+title: Warp Terminal
+date: 2026-02-17
+description: La terminal reimaginada para el siglo XXI con IA, Bloques y funciones de IDE.
+sidebar:
+  order: 3
+---
+
+import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
+
+## 🚀 ¿Qué es Warp?
+
+[Warp](https://www.warp.dev/) no es solo otro emulador de terminal. Es una **reinvención completa** de cómo interactuamos con la línea de comandos. Escrita en **Rust**, es increíblemente rápida y GPU-accelerated.
+
+A diferencia de las terminales tradicionales que tratan todo como texto plano, Warp entiende la estructura de tus comandos y salidas, ofreciendo una experiencia más cercana a un editor de código moderno (IDE).
+
+## ✨ Características Revolucionarias
+
+<CardGrid>
+  <Card title="Editor de Texto Real" icon="pencil">
+    Olvídate de mover el cursor con flechitas. En Warp, la entrada es un editor de texto completo. Usa ratón, selecciona, copia, pega y edita multilínea como en VS Code.
+  </Card>
+  <Card title="Warp AI Integrada" icon="rocket">
+    ¿Olvidaste cómo descomprimir un tar? Pregúntale a la IA integrada: "unzip tar file" y obtén el comando listo para ejecutar. También detecta errores y te sugiere soluciones.
+  </Card>
+  <Card title="Sistema de Bloques" icon="puzzle">
+    Cada comando y su salida están encapsulados en un "Bloque". Puedes navegar entre bloques, copiar solo la salida, o compartir un bloque específico con un colega.
+  </Card>
+  <Card title="Warp Drive" icon="document">
+    Guarda tus comandos más usados en "Workflows" y compártelos con tu equipo. Es como un cuaderno de notas ejecutable compartido.
+  </Card>
+</CardGrid>
+
+---
+
+## 📥 Instalación
+
+Warp está disponible para las principales plataformas.
+
+<Steps>
+
+1.  **macOS** (La plataforma original)
+    
+    ```bash
+    brew install --cask warp
+    ```
+
+2.  **Linux**
+    
+    Soporte oficial para Debian/Ubuntu (`.deb`), Fedora/RHEL (`.rpm`), Arch (`pacman`) y AppImage.
+    
+    *Descarga el instalador desde [warp.dev](https://www.warp.dev/)*.
+
+3.  **Windows**
+    
+    ¡Ya disponible! (Beta). Puedes instalarlo vía Winget:
+    
+    ```powershell
+    winget install Warp.Warp
+    ```
+
+</Steps>
+
+## 💡 ¿Por qué cambiar?
+
+Si pasas mucho tiempo en la terminal, Warp elimina fricciones históricas:
+
+*   **Autocompletado Inteligente**: No necesita configuración compleja de `.zshrc`. Viene con autocompletado visual para casi todos los comandos (git, npm, docker, aws).
+*   **Temas y Personalización**: Cambia el look & feel fácilmente.
+*   **Navegación**: Usa `Cmd/Ctrl + P` para buscar comandos anteriores o workflows, igual que en VS Code.
+
+:::tip[Pro Tip]
+Combina **WSL2** en Windows con **Warp**. Aunque Warp corre en Windows, se integra perfectamente con tu distro de Linux por defecto.
+:::
