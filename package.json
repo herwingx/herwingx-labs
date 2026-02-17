@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/auto-badges.mjs && astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/auto-badges.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "cms": "npx decap-server",

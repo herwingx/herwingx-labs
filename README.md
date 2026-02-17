@@ -201,8 +201,8 @@ Este script se ejecuta automáticamente antes de `dev` y `build`.
 | Acción | Archivos a tocar | ¿Reiniciar server? |
 | :--- | :--- | :---: |
 | **Agregar un Artículo** | Solo crea el `.mdx` en la carpeta correcta. | No |
-| **Crear Subcarpeta** | 1. Crea carpeta + `index.mdx`<br>2. Registra en `config.yml` | **Sí** (CMS) |
-| **Nueva Categoría Raíz** | 1. Crea carpeta en `src/content/docs/`<br>2. Añade grupo en `astro.config.mjs`<br>3. Registra en `public/admin/config.yml` | **Sí** |
+| **Crear Subcarpeta** | 1. Crea carpeta + `index.mdx` (o `intro.mdx`)<br>2. Registra en `config.yml` | **Sí** (CMS) |
+| **Nueva Categoría Raíz** | 1. Crea carpeta en `src/content/docs/`<br>2. Añade grupo en `astro.config.mjs`<br>3. Registra en `public/admin/config.yml`<br>4. Añade tarjeta en `src/content/docs/index.mdx` | **Sí** |
 | **Cambiar Portada** | `src/content/docs/index.mdx` | No |
 | **Cambiar CSS Global** | `src/styles/custom.css` | No |
 
