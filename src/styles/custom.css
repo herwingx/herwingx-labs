@@ -58,126 +58,161 @@
 	--sl-color-text: var(--color-text);
 	--sl-color-text-accent: var(--color-accent);
 
-	--sl-nav-height: 4rem;
+	--sl-nav-height: 3.5rem;
+	/* Más compacto y elegante */
 }
 
 /* Ajustes globales */
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
+	/* CRÍTICO: Prevenir scroll horizontal global */
 }
 
 body {
 	background-color: var(--color-bg);
+	overflow-x: hidden;
+	/* Doble seguridad */
+	width: 100%;
 }
 
-/* Tipografía Mono para Títulos */
-h1,
-h2,
-h3,
-h4,
-.site-title {
-	font-family: var(--sl-font-mono) !important;
-	letter-spacing: -0.04em;
-	color: var(--color-text) !important;
+/* ... (rest of typography rules) ... */
+
+/* 4. FONDOS DECORATIVOS (Pointer events none para no bloquear clicks) */
+.hero {
+	position: relative;
+	/* Eliminamos padding forzado para dejar que Starlight maneje el espacio */
+	overflow: hidden !important;
+	/* CRÍTICO: Recortar cualquier elemento decorativo que se salga */
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -10%;
+	/* Reducido para evitar desbordes */
+	width: 60%;
+	/* Reducido */
+	height: 150%;
+	background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+	z-index: -1;
+	filter: blur(80px);
+	pointer-events: none;
+}
+
+.hero>div:last-child {
+	/* Contenedor de imagen (si existe) */
+	position: relative;
+	z-index: 1;
+}
+
+.hero>div:last-child::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	/* Contenido dentro del contenedor */
+	height: 100%;
+	background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+	z-index: -1;
+	filter: blur(60px);
+	pointer-events: none;
 }
 
 /* ==========================================================================
-   4. HEADER (CORRECCIÓN DE BORDE DOBLE)
+   4. HEADER (VISUAL ONLY)
    ========================================================================== */
 .header {
-	/* CRÍTICO: Eliminamos la sombra por defecto de Starlight */
+	/* Glassmorphism Premium: Más limpio y sin gradientes */
 	box-shadow: none !important;
 	background-color: var(--color-bg-overlay) !important;
-	padding-inline: 1.5rem !important;
-	/* Menos margen lateral */
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
+	background-image: none !important;
+	/* Asegurar que no hay gradientes */
+	backdrop-filter: saturate(180%) blur(20px) !important;
+	-webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+	border-bottom: 1px solid var(--color-border) !important;
 }
 
 .site-title {
 	font-weight: 700;
-	font-size: 1.2rem;
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+	font-size: 1.1rem !important;
+	/* Ligeramente más pequeño para evitar desbordes */
+	color: var(--color-text);
+	text-decoration: none !important;
+}
+
+/* Adaptación de Color Premium para el Título */
+:root[data-theme='light'] .site-title {
+	color: #09090b !important;
+	/* Negro intenso en Light Mode */
+}
+
+:root[data-theme='dark'] .site-title {
+	color: #ffffff !important;
+	text-shadow: 0 0 30px var(--color-accent-glow);
+	letter-spacing: -0.01em;
+}
+
+/* Control estricto del Logo para que no expanda el header */
+.site-title svg {
+	height: 1.5rem !important;
+	width: auto !important;
+	display: block;
 }
 
 /* ==========================================================================
-   5. HERO SECTION & BUTTONS (REDESIGNED)
+   5. HERO SECTION & BUTTONS (VISUAL ONLY)
    ========================================================================== */
 
-/* Ajuste del contenedor principal */
-.hero {
-	padding-block: 6rem 8rem !important;
-	/* Más aire arriba y abajo */
-}
-
-/* 1. TÍTULO (Massive & High-End) */
+/* 1. TÍTULO (Estética Premium sin romper comportamiento) */
 .hero h1 {
 	font-family: 'JetBrains Mono', monospace !important;
-	font-size: clamp(3.5rem, 8vw, 6rem) !important;
+	font-size: clamp(2.5rem, 6vw, 5rem) !important;
+	/* Ajustado para mejor responsividad */
 	line-height: 1.2 !important;
 	font-weight: 900 !important;
 	letter-spacing: -0.02em !important;
-	margin-bottom: 2rem !important;
 	text-transform: uppercase;
-
-	/* Typing Effect */
-	display: inline-block;
-	overflow: hidden;
-	white-space: nowrap;
-	border-right: 4px solid var(--color-accent);
-	width: 0;
-	animation:
-		typing 1.5s steps(20, end) forwards,
-		blink 0.8s step-end infinite;
+	color: var(--color-text) !important;
 }
 
-/* Efecto Neón/Metálico en Dark Mode */
+/* Efecto visual en Dark Mode - Suavizado para evitar el "linear" excesivo */
 :root[data-theme='dark'] .hero h1 {
-	background: linear-gradient(to bottom, #fff 30%, #3b82f6 100%);
+	background: #ffffff;
+	background: radial-gradient(circle at center, #ffffff 0%, #9ca3af 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
+	filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.2));
 }
 
-/* 2. TAGLINE (Subtítulo avanzado) */
+/* 2. TAGLINE */
 .hero .tagline {
 	font-family: 'Inter', sans-serif;
-	font-size: 1.35rem !important;
-	line-height: 1.4 !important;
+	font-size: 1.25rem !important;
+	/* Ligeramente reducido para móvil */
+	line-height: 1.5 !important;
 	color: var(--color-text-dim) !important;
-	max-width: 55ch;
 	font-weight: 500;
 }
 
-/* 3. CONTENEDOR DE ACCIONES */
-.hero .actions {
-	margin-top: 3.5rem !important;
-	gap: 2.5rem !important;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-}
-
-/* 4. BOTONES HERO (High-End SaaS Upgrade - FINAL FORCE) */
-/* Usamos :root para elevar la especificidad al máximo */
-:root .hero .actions a.action {
+/* 3. BOTONES HERO (Solo Estética) */
+/* Selector específico para no romper el layout grid/flex del contenedor .actions original */
+.hero .actions a {
 	border-radius: 12px !important;
-	padding: 0.9rem 2.5rem !important;
+	padding: 0.8rem 2rem !important;
+	/* Padding visual */
 	font-weight: 600 !important;
-	font-size: 1.1rem !important;
+	font-size: 1rem !important;
 	text-decoration: none !important;
-	display: inline-flex !important;
-	align-items: center !important;
-	gap: 0.75rem !important;
 	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important;
-	overflow: hidden;
+	/* Eliminamos display flex internos que puedan romper alineación de iconos si Starlight ya lo hace */
 }
 
-/* Botón Primario: Blue High-End */
-:root .hero .actions a.action.primary {
+/* Botón Primario */
+.hero .actions a.primary {
 	background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%) !important;
 	color: #fff !important;
 	border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -187,17 +222,16 @@ h4,
 		inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
-:root .hero .actions a.action.primary:hover {
-	transform: translateY(-3px) !important;
+.hero .actions a.primary:hover {
+	transform: translateY(-2px) !important;
 	box-shadow:
 		0 0 0 1px rgba(0, 0, 0, 0.4),
 		0 12px 30px rgba(59, 130, 246, 0.6),
 		inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-	filter: brightness(1.1);
 }
 
-/* Botones No-Primarios (Minimal, etc) */
-:root .hero .actions a.action:not(.primary) {
+/* Botón Secundario */
+.hero .actions a.secondary {
 	background: rgba(255, 255, 255, 0.04) !important;
 	border: 1px solid rgba(255, 255, 255, 0.1) !important;
 	color: var(--color-text) !important;
@@ -205,17 +239,40 @@ h4,
 	-webkit-backdrop-filter: blur(12px) !important;
 }
 
-:root .hero .actions a.action:not(.primary):hover {
+.hero .actions a.secondary:hover {
 	background: rgba(255, 255, 255, 0.08) !important;
 	border-color: rgba(255, 255, 255, 0.25) !important;
-	color: #fff !important;
 	transform: translateY(-2px) !important;
 }
 
-
-/* 6. IMAGEN HERO (Static & Glow) */
-.hero>div:last-child {
+/* 4. FONDOS DECORATIVOS (Pointer events none para no bloquear clicks) */
+/* 4. FONDOS DECORATIVOS (Pointer events none para no bloquear clicks) */
+.hero {
 	position: relative;
+	/* Eliminamos padding forzado para dejar que Starlight maneje el espacio */
+	overflow: hidden !important;
+	/* CRÍTICO: Recortar cualquier elemento decorativo que se salga */
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: -20%;
+	left: -5%;
+	/* Reducido drásticamente para evitar desbordes */
+	width: 50%;
+	/* Reducido */
+	height: 140%;
+	background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+	z-index: -1;
+	filter: blur(80px);
+	pointer-events: none;
+}
+
+.hero>div:last-child {
+	/* Contenedor de imagen (si existe) */
+	position: relative;
+	z-index: 1;
 }
 
 .hero>div:last-child::before {
@@ -224,43 +281,16 @@ h4,
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 140%;
-	height: 140%;
-	background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+	width: 100%;
+	/* Contenido dentro del contenedor */
+	height: 100%;
+	background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
 	z-index: -1;
 	filter: blur(60px);
-}
-
-/* 7. TYPING ANIMATIONS */
-@keyframes typing {
-	from {
-		width: 0;
-	}
-
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes blink {
-	50% {
-		border-color: transparent;
-	}
-}
-
-/* Fondo Spotlight para la sección Hero */
-.hero::before {
-	content: '';
-	position: absolute;
-	top: -10%;
-	left: 20%;
-	width: 600px;
-	height: 600px;
-	background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 80%);
-	z-index: -1;
-	filter: blur(100px);
 	pointer-events: none;
 }
+
+
 
 
 /* ==========================================================================
@@ -524,14 +554,16 @@ h4,
 /* Search Button Style */
 button[data-open-modal] {
 	border: 1px solid var(--color-border) !important;
-	background: transparent !important;
-	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.03) !important;
+	border-radius: 10px !important;
 	font-size: 0.8rem;
 	color: var(--color-text-dim);
+	transition: all 0.2s ease;
 }
 
 button[data-open-modal]:hover {
-	border-color: var(--color-text-dim) !important;
+	border-color: var(--color-accent) !important;
+	background: rgba(59, 130, 246, 0.05) !important;
 	color: var(--color-text);
 }
 
