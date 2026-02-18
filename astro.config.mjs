@@ -95,6 +95,42 @@ export default defineConfig({
 						content: 'black-translucent',
 					},
 				},
+				// Open Graph & Twitter Cards
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: '/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:image',
+						content: '/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:title',
+						content: 'Herwingx Labs',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:description',
+						content: 'Tutoriales y recursos avanzados de Frontend, Backend y DevOps',
+					},
+				},
 			],
 			// Componentes personalizados
 			components: {
