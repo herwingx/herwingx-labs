@@ -117,20 +117,7 @@ export default defineConfig({
 						content: 'summary_large_image',
 					},
 				},
-				{
-					tag: 'meta',
-					attrs: {
-						name: 'twitter:title',
-						content: 'Herwingx Labs',
-					},
-				},
-				{
-					tag: 'meta',
-					attrs: {
-						name: 'twitter:description',
-						content: 'Tutoriales y recursos avanzados de Frontend, Backend y DevOps',
-					},
-				},
+
 			],
 			// Componentes personalizados
 			components: {

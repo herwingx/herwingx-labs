@@ -59,6 +59,38 @@ collections:
                   options: [tip, note, caution, danger, success],
                   required: false,
                 }
+      - label: Meta Tags (SEO/OG)
+        name: head
+        widget: list
+        collapsed: true
+        summary: "{{fields.attrs.content}}"
+        fields:
+          - {
+              label: Tag,
+              name: tag,
+              widget: select,
+              options: ["meta", "link"],
+              default: "meta",
+            }
+          - label: Atributos
+            name: attrs
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string, required: false }
+              - {
+                  label: Property,
+                  name: property,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Content,
+                  name: content,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Rel, name: rel, widget: string, required: false }
+              - { label: Href, name: href, widget: string, required: false }
       - { label: Contenido, name: body, widget: markdown }
 
   # ═══════════════════════════════════════════════════════════════
@@ -109,6 +141,38 @@ collections:
                   options: [tip, note, caution, danger, success],
                   required: false,
                 }
+      - label: Meta Tags (SEO/OG)
+        name: head
+        widget: list
+        collapsed: true
+        summary: "{{fields.attrs.content}}"
+        fields:
+          - {
+              label: Tag,
+              name: tag,
+              widget: select,
+              options: ["meta", "link"],
+              default: "meta",
+            }
+          - label: Atributos
+            name: attrs
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string, required: false }
+              - {
+                  label: Property,
+                  name: property,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Content,
+                  name: content,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Rel, name: rel, widget: string, required: false }
+              - { label: Href, name: href, widget: string, required: false }
       - { label: Contenido, name: body, widget: markdown }
 
   - name: backend-cursor
@@ -162,6 +226,38 @@ collections:
                   options: [tip, note, caution, danger, success],
                   required: false,
                 }
+      - label: Meta Tags (SEO/OG)
+        name: head
+        widget: list
+        collapsed: true
+        summary: "{{fields.attrs.content}}"
+        fields:
+          - {
+              label: Tag,
+              name: tag,
+              widget: select,
+              options: ["meta", "link"],
+              default: "meta",
+            }
+          - label: Atributos
+            name: attrs
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string, required: false }
+              - {
+                  label: Property,
+                  name: property,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Content,
+                  name: content,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Rel, name: rel, widget: string, required: false }
+              - { label: Href, name: href, widget: string, required: false }
       - { label: Contenido, name: body, widget: markdown }
 
   # ═══════════════════════════════════════════════════════════════
@@ -262,6 +358,38 @@ collections:
                   options: [tip, note, caution, danger, success],
                   required: false,
                 }
+      - label: Meta Tags (SEO/OG)
+        name: head
+        widget: list
+        collapsed: true
+        summary: "{{fields.attrs.content}}"
+        fields:
+          - {
+              label: Tag,
+              name: tag,
+              widget: select,
+              options: ["meta", "link"],
+              default: "meta",
+            }
+          - label: Atributos
+            name: attrs
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string, required: false }
+              - {
+                  label: Property,
+                  name: property,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Content,
+                  name: content,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Rel, name: rel, widget: string, required: false }
+              - { label: Href, name: href, widget: string, required: false }
       - { label: Contenido, name: body, widget: markdown }
 
   - name: tools-labs-wsl
@@ -295,6 +423,38 @@ collections:
         required: false
         fields:
           - { label: Orden, name: order, widget: number, required: false }
+      - label: Meta Tags (SEO/OG)
+        name: head
+        widget: list
+        collapsed: true
+        summary: "{{fields.attrs.content}}"
+        fields:
+          - {
+              label: Tag,
+              name: tag,
+              widget: select,
+              options: ["meta", "link"],
+              default: "meta",
+            }
+          - label: Atributos
+            name: attrs
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string, required: false }
+              - {
+                  label: Property,
+                  name: property,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Content,
+                  name: content,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Rel, name: rel, widget: string, required: false }
+              - { label: Href, name: href, widget: string, required: false }
       - { label: Contenido, name: body, widget: markdown }
 
   # ═══════════════════════════════════════════════════════════════

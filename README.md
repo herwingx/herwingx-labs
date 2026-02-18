@@ -65,6 +65,45 @@ Aquí empieza la magia...
 
 ---
 
+## 📸 Gestión de Imágenes OG (Open Graph)
+
+Las "Imágenes OG" son las que aparecen cuando compartes un link en WhatsApp, Twitter, LinkedIn, etc.
+
+### 1. Ubicación de Archivos
+Todas las imágenes deben ir dentro de la carpeta `public`.
+Recomendamos organizarlas así:
+
+```bash
+public/
+├── og-image.png          # Imagen por defecto para todo el sitio
+└── images/               # Imágenes específicas
+    ├── warp-card.png
+    └── docker-intro.jpg
+```
+
+### 2. Configuración en el Artículo
+En el archivo `.mdx`, usa la ruta **absoluta** (empezando con `/`) que corresponde a lo que hay dentro de `public`.
+
+**Ejemplo:** Si tu imagen está en `public/images/warp-card.png`, la configuración es:
+
+```mdx
+---
+title: Warp Terminal
+description: La terminal del futuro...
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: /images/warp-card.png   <-- Ruta desde 'public'
+  - tag: meta
+    attrs:
+      name: twitter:image
+      content: /images/warp-card.png   <-- Repetir aquí
+---
+```
+
+---
+
 ## 📁 Crear Carpetas y Subcarpetas
 
 > ⚠️ **Importante:** Sveltia CMS solo puede crear **archivos**, no carpetas.
