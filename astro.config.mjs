@@ -29,6 +29,11 @@ export default defineConfig({
 			// Enlaces sociales
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/herwingx' },
+				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/herwingx' },
+				{ icon: 'x.com', label: 'X (Twitter)', href: 'https://x.com/herwingx' },
+				{ icon: 'instagram', label: 'Instagram', href: 'https://instagram.com/herwingx' },
+				{ icon: 'threads', label: 'Threads', href: 'https://threads.net/@herwingx' },
+				{ icon: 'rss', label: 'RSS Feed', href: '/rss.xml' },
 			],
 			// Color de acento nativo (Azul)
 			customCss: [

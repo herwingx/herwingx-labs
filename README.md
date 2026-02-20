@@ -129,4 +129,18 @@ Si encuentras un error en mis notas o tienes una forma mejor de hacer algo:
 
 ---
 
+## 🌐 Redes y Contacto
+
+<p align="center">
+  <a href="https://herwingx.dev"><img src="https://img.shields.io/badge/Website-herwingx.dev-1e40af?style=flat-square&logo=google-chrome&logoColor=white" alt="Website" /></a>
+  <a href="https://github.com/herwingx"><img src="https://img.shields.io/badge/GitHub-herwingx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://linkedin.com/in/herwingx"><img src="https://img.shields.io/badge/LinkedIn-herwingx-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://x.com/herwingx"><img src="https://img.shields.io/badge/X-@herwingx-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://instagram.com/herwingx"><img src="https://img.shields.io/badge/Instagram-herwingx-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  <a href="https://threads.net/@herwingx"><img src="https://img.shields.io/badge/Threads-herwingx-000000?style=flat-square&logo=threads&logoColor=white" alt="Threads" /></a>
+  <a href="https://tiktok.com/@herwingx"><img src="https://img.shields.io/badge/TikTok-@herwingx-000000?style=flat-square&logo=tiktok&logoColor=white" alt="TikTok" /></a>
+</p>
+
+---
+
 *Hecho con 🧪 y ☕ por Herwingx.*
