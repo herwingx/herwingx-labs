@@ -43,7 +43,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -132,7 +132,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -218,7 +218,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -313,7 +313,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -370,7 +370,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -456,7 +456,7 @@ collections:
           name: og_image,
           widget: string,
           required: false,
-          hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+          hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
         }
       - label: Sidebar
         name: sidebar
@@ -516,6 +516,6 @@ collections:
               name: og_image,
               widget: string,
               required: false,
-              hint: "URL absoluta de la imagen OG (ej: https://labs.herwingx.dev/og-image.png)",
+              hint: "URL absoluta de la imagen OG (ej: https://blog.herwingx.com/og-image.png)",
             }
           - { label: Contenido, name: body, widget: markdown }

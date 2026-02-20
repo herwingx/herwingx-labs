@@ -28,7 +28,7 @@ Crea un archivo `.mdx` en la carpeta correspondiente dentro de `src/content/docs
 title: Mi Nuevo Experimento
 date: "2026-02-04"   # ¡Importante! Usa comillas y fecha actual.
 description: Breve resumen de qué rompiste hoy.
-og_image: https://labs.herwingx.dev/images/mi-imagen.png  # (Opcional) URL absoluta
+og_image: https://blog.herwingx.com/images/mi-imagen.png  # (Opcional) URL absoluta
 sidebar:
   order: 10          # (Opcional) Orden manual
 ---

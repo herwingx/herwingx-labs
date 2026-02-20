@@ -1,8 +1,8 @@
-# 🧪 Herwingx Labs
+# Herwingx Blog
 
-> **Donde rompo cosas para aprender cómo funcionan.** — Tutoriales prácticos sobre desarrollo, servidores caseros y vida en la terminal.
+> **Blog de desarrollo** — artículos sobre Frontend, Backend, DevOps y herramientas.
 
-[![Estado](https://img.shields.io/badge/Estado-En_Producción-2ea44f?style=flat-square&logo=github)](https://labs.herwingx.dev)
+[![Estado](https://img.shields.io/badge/Estado-En_Producción-2ea44f?style=flat-square&logo=github)](https://blog.herwingx.com)
 [![Astro](https://img.shields.io/badge/Astro-5.0-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
 [![Starlight](https://img.shields.io/badge/Starlight-0.37-7735ea?style=flat-square&logo=astro&logoColor=white)](https://starlight.astro.build)
 [![CMS](https://img.shields.io/badge/Sveltia-CMS-FF3E00?style=flat-square&logo=svelte&logoColor=white)](https://github.com/sveltia/sveltia-cms)
@@ -132,7 +132,7 @@ Si encuentras un error en mis notas o tienes una forma mejor de hacer algo:
 ## 🌐 Redes y Contacto
 
 <p align="center">
-  <a href="https://herwingx.dev"><img src="https://img.shields.io/badge/Website-herwingx.dev-1e40af?style=flat-square&logo=google-chrome&logoColor=white" alt="Website" /></a>
+  <a href="https://blog.herwingx.com"><img src="https://img.shields.io/badge/Website-blog.herwingx.com-1e40af?style=flat-square&logo=google-chrome&logoColor=white" alt="Website" /></a>
   <a href="https://github.com/herwingx"><img src="https://img.shields.io/badge/GitHub-herwingx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
   <a href="https://linkedin.com/in/herwingx"><img src="https://img.shields.io/badge/LinkedIn-herwingx-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://x.com/herwingx"><img src="https://img.shields.io/badge/X-@herwingx-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>

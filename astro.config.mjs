@@ -4,11 +4,11 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://labs.herwingx.dev',
+	site: 'https://blog.herwingx.com',
 	integrations: [
 		starlight({
-			title: 'Herwingx Labs',
-			description: 'Tutoriales y recursos avanzados de desarrollo - Frontend, Backend y DevOps',
+			title: 'Herwingx Blog',
+			description: 'Blog de desarrollo — artículos sobre Frontend, Backend, DevOps y herramientas',
 			logo: {
 				light: './src/assets/logo.svg',
 				dark: './src/assets/logo.svg',

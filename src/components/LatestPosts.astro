@@ -62,18 +62,18 @@ const getCategory = (id: string) => {
             <span class="post-date">{formatDate(doc.data.date!)}</span>
             <h3>{doc.data.title}</h3>
             <p>
-              {doc.data.description || "Explora este recurso técnico de élite."}
+              {doc.data.description || "Lee el artículo completo."}
             </p>
           </div>
           <div class="post-footer">
-            <span class="read-btn">Entrar al post</span>
+            <span class="read-btn">Leer artículo</span>
             <span class="arrow">→</span>
           </div>
         </a>
       ))
     ) : (
       <div class="empty-state">
-        <p>Pronto verás aquí mis últimos tutoriales.</p>
+        <p>Los artículos aparecerán aquí cuando haya algo publicado.</p>
       </div>
     )
   }

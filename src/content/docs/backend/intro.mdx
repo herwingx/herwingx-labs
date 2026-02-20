@@ -1,6 +1,6 @@
 ---
-title: Backend & Scalable Logic
-description: El motor detrás de la escala. Arquitecturas robustas, IA y gestión de datos masivos.
+title: Backend
+description: Artículos sobre arquitecturas, APIs, bases de datos y sistemas escalables.
 sidebar:
   label: Introducción Backend
   order: 1
@@ -8,36 +8,32 @@ sidebar:
 
 import { CardGrid, Card } from '@astrojs/starlight/components';
 
-## ⚙️ El Motor de la Innovación
+## Backend — la lógica que sostiene todo
 
-En este laboratorio, el Backend no es solo una base de datos conectada a una API. Es el cerebro que orquesta flujos de trabajo inteligentes, integra capacidades de IA y garantiza que tu aplicación no se desplome bajo presión.
+Esta sección cubre el desarrollo del lado del servidor: **APIs, arquitecturas, bases de datos y las decisiones que afectan cómo un sistema escala o se rompe.**
 
-> "Un buen backend es aquel que nunca te da una sorpresa un viernes por la tarde."
+El foco no está en cubrir todo el espacio de backend, sino en los problemas que realmente aparecen cuando construyes algo que usa gente real.
 
-### Pilares de Ingeniería Backend
+### Temas frecuentes
 
 <CardGrid>
-  <Card title="Arquitectura Evolutiva" icon="setting">
-    Diseño de microservicios, serverless y eventos que permiten que tu sistema crezca de 100 a 1,000,000 de usuarios sin fricción.
+  <Card title="APIs & Arquitectura" icon="setting">
+    REST, GraphQL, tRPC — cuándo usar qué y cómo diseñar contratos que no se conviertan en deuda técnica.
   </Card>
-  <Card title="Integración con IA" icon="rocket">
-    Cómo usar LLMs, bases de datos vectoriales y agentes para automatizar la lógica de negocio y crear productos "AI-Native".
+  <Card title="Bases de Datos" icon="open-book">
+    SQL, NoSQL, bases vectoriales. Queries eficientes, esquemas que evolucionan y estrategias de indexado.
   </Card>
-  <Card title="Seguridad & Datos" icon="lock">
-    Manejo de estados complejos, encriptación, protocolos de seguridad modernos y optimización de bases de datos para latencia ultra-baja.
+  <Card title="IA Aplicada" icon="rocket">
+    Integrar LLMs, embeddings y agentes en productos reales — sin hype, con casos de uso concretos.
   </Card>
 </CardGrid>
 
 ---
 
-## 🚀 Desafíos Técnicos
+## Artículos en esta sección
 
-Aquí profundizamos en lo que realmente importa cuando escalas:
+El foco está en decisiones de diseño que importan: escalabilidad, observabilidad y seguridad sin sacrificar velocidad de desarrollo.
 
-1.  **Caché Avanzada**: No solo Redis, sino estrategias de invalidación y capas de datos distribuidas.
-2.  **Webhooks & Eventos**: Sincronización en tiempo real entre múltiples servicios.
-3.  **Observabilidad**: Cómo medir lo que está pasando en tus servidores antes de que algo falle.
-
-:::tip[Reflexión]
-Cualquiera puede escribir un script que funcione para un usuario. Un ingeniero diseña sistemas que funcionan para todos, todo el tiempo.
+:::tip[Perspectiva]
+Un buen sistema backend no es el más elegante, es el que el equipo puede mantener y escalar sin miedo.
 :::
