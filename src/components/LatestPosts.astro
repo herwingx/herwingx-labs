@@ -29,7 +29,7 @@ const latestDocs = allDocs
   .slice(0, 3);
 
 // Función para formatear fecha
-const formatDate = (date: string) => {
+const formatDate = (date: string | Date) => {
   return new Date(date).toLocaleDateString("es-ES", {
     day: "numeric",
     month: "short",
@@ -41,8 +41,7 @@ const formatDate = (date: string) => {
 const getCategory = (id: string) => {
   const parts = id.split("/");
   if (parts.length > 1) {
-    const cat = parts[0].toUpperCase();
-    return cat === "TOOLS-LABS" ? "LABS" : cat;
+    return parts[0].replace(/-/g, " ").toUpperCase();
   }
   return "POST";
 };
@@ -53,9 +52,14 @@ const getCategory = (id: string) => {
     latestDocs.length > 0 ? (
       latestDocs.map((doc) => (
         <a href={`/${doc.id}/`} class="post-card">
+          {doc.data.og_image && (
+            <div class="post-cover">
+              <img src={doc.data.og_image} alt={doc.data.title} loading="lazy" />
+            </div>
+          )}
           <div class="post-badge">{getCategory(doc.id)}</div>
           <div class="post-content">
-            <span class="post-date">{formatDate(doc.data.date)}</span>
+            <span class="post-date">{formatDate(doc.data.date!)}</span>
             <h3>{doc.data.title}</h3>
             <p>
               {doc.data.description || "Explora este recurso técnico de élite."}
@@ -88,7 +92,7 @@ const getCategory = (id: string) => {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 0;
     text-decoration: none !important;
     color: inherit !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -129,8 +133,29 @@ const getCategory = (id: string) => {
     opacity: 0.15;
   }
 
+  .post-cover {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+    flex-shrink: 0;
+  }
+
+  .post-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .post-card:hover .post-cover img {
+    transform: scale(1.05);
+  }
+
   .post-badge {
     align-self: flex-start;
+    margin: 1.5rem 2rem 1.5rem;
     background: var(--color-accent);
     color: white;
     font-size: 0.7rem;
@@ -138,8 +163,11 @@ const getCategory = (id: string) => {
     padding: 0.3rem 0.8rem;
     border-radius: 999px;
     letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px var(--color-accent-glow);
+  }
+
+  .post-content {
+    padding: 0 2rem;
   }
 
   .post-date {
@@ -172,6 +200,7 @@ const getCategory = (id: string) => {
 
   .post-footer {
     margin-top: 2rem;
+    padding: 0 2rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

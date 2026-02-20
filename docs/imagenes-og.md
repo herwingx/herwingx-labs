@@ -29,7 +29,7 @@ Agrega `og_image` al frontmatter:
 ---
 title: Warp Terminal
 description: La terminal del futuro...
-og_image: https://docs.herwingx.dev/images/warp-card.png
+og_image: https://labs.herwingx.dev/images/warp-card.png
 ---
 ```
 
@@ -40,7 +40,7 @@ og_image: https://docs.herwingx.dev/images/warp-card.png
 | Regla                          | Detalle                                                                            |
 | :----------------------------- | :--------------------------------------------------------------------------------- |
 | **Cada artículo con su imagen** | No existe imagen por defecto. Cada post necesita su propia `og_image`             |
-| **URL absoluta obligatoria**   | `https://docs.herwingx.dev/images/warp-card.png` (no `/images/warp-card.png`)      |
+| **URL absoluta obligatoria**   | `https://labs.herwingx.dev/images/warp-card.png` (no `/images/warp-card.png`)      |
 | **Archivos en `public/images/`** | Las imágenes van en `public/images/` (el CMS las guarda ahí automáticamente)       |
 | **Sin imagen = sin preview**   | Si no defines `og_image`, el link se comparte sin imagen (solo título y descripción) |
 | **Tamaño recomendado**         | 1200×630px, formato PNG o JPG                                                      |

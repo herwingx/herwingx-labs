@@ -7,7 +7,8 @@ interface Props {
     | "tools"
     | "productivity"
     | "toolset"
-    | "mastery";
+    | "mastery"
+    | "consistency";
   size?: string;
 }
 
@@ -66,8 +67,16 @@ const icons = {
   mastery: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`,
-};
+    </svg>`,  consistency: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="grad-consistency" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <path d="M12 2L3 7V12C3 16.55 7.08 20.74 12 22C16.92 20.74 21 16.55 21 12V7L12 2Z" stroke="url(#grad-consistency)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 12L11 14L15 10" stroke="url(#grad-consistency)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,};
 ---
 
 <div class="icon-wrapper" style={`width: ${size}; height: ${size};`}>

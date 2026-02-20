@@ -2,7 +2,7 @@
 
 > **Donde rompo cosas para aprender cómo funcionan.** — Tutoriales prácticos sobre desarrollo, servidores caseros y vida en la terminal.
 
-[![Estado](https://img.shields.io/badge/Estado-En_Producción-2ea44f?style=flat-square&logo=github)](https://docs.herwingx.dev)
+[![Estado](https://img.shields.io/badge/Estado-En_Producción-2ea44f?style=flat-square&logo=github)](https://labs.herwingx.dev)
 [![Astro](https://img.shields.io/badge/Astro-5.0-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
 [![Starlight](https://img.shields.io/badge/Starlight-0.37-7735ea?style=flat-square&logo=astro&logoColor=white)](https://starlight.astro.build)
 [![CMS](https://img.shields.io/badge/Sveltia-CMS-FF3E00?style=flat-square&logo=svelte&logoColor=white)](https://github.com/sveltia/sveltia-cms)
